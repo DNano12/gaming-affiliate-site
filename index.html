@@ -7,204 +7,106 @@
     <meta name="description" content="Find the best gaming deals on laptops, mice, and accessories.">
     <meta name="keywords" content="gaming deals, gaming laptops, gaming accessories, best gaming deals">
     <title>Gaming Deals Hub</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
             background: url('background.jpg') no-repeat center center fixed;
             background-size: cover;
-            color: #fff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: linear-gradient(90deg, #222, #111);
-            padding: 20px;
-            font-size: 28px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-        }
-        nav {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            left: 0;
-            top: 40px;
-            background-color: #333;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: #ff6600;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-        .dropdown-content a:hover {
-            background-color: #575757;
-        }
-        .show {
-            display: block;
-        }
-        .deals {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 40px;
-        }
-        .deal {
-            background: rgba(34, 34, 34, 0.9);
-            padding: 20px;
-            border-radius: 12px;
-            width: 320px;
-            box-shadow: 0px 4px 10px rgba(255, 102, 0, 0.5);
-            transition: transform 0.3s ease-in-out;
-        }
-        .deal:hover {
-            transform: scale(1.05);
         }
         .deal img {
-            max-width: 100%;
-            border-radius: 8px;
             transition: opacity 0.3s ease-in-out;
         }
         .deal:hover img {
             opacity: 0.8;
         }
-        .deal h3 {
-            margin: 10px 0;
-            color: #ff6600;
-        }
-        .deal p {
-            font-size: 14px;
-            color: #ddd;
-        }
-        .deal a {
-            display: block;
-            margin-top: 10px;
-            background: linear-gradient(90deg, #ff6600, #ff3300);
-            padding: 12px;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-            transition: background 0.3s ease-in-out;
-        }
-        .deal a:hover {
-            background: linear-gradient(90deg, #ff3300, #ff6600);
-        }
-        .about {
-            padding: 20px;
-            background: #111;
-            color: #fff;
-            text-align: left;
+        .dropdown-content {
             display: none;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
         }
-        .about h2 {
-            color: #ff6600;
-        }
-        .about-button {
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.8);
-            color: #ff6600;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .about-button:hover {
-            background: #ff6600;
-            color: #fff;
-        }
-        footer {
-            position: fixed;
-            bottom: 5px;
-            width: 100%;
-            text-align: center;
-        }
-        .attribution {
-            font-size: 10px;
-            opacity: 0.4;
-            color: #ffffff;
-        }
-        .attribution a {
-            color: inherit;
-            text-decoration: none;
-        }
-        .attribution a:hover {
-            opacity: 0.8;
+        .show {
+            display: block !important;
         }
     </style>
 </head>
-<body>
-    <header>Gaming Deals Hub</header>
-    <nav>
-        <div class="dropdown">
-            <button class="about-button" onclick="toggleMenu()">Menu</button>
-            <div id="dropdown-content" class="dropdown-content">
-                <a href="affiliate1.html">Affiliate 1</a>
-                <a href="affiliate2.html">Affiliate 2</a>
-                <a href="affiliate3.html">Affiliate 3</a>
-                <a href="affiliate4.html">Affiliate 4</a>
-                <a href="#" onclick="toggleAbout()">About Us</a>
+<body class="text-white font-sans">
+
+    <!-- Header -->
+    <header class="bg-gray-900 text-center py-5 shadow-lg text-xl font-bold uppercase tracking-widest">
+        Gaming Deals Hub
+    </header>
+
+    <!-- Navigation -->
+    <nav class="absolute top-5 left-5">
+        <div class="relative">
+            <button id="menuButton" class="bg-gray-800 text-orange-500 px-4 py-2 rounded-md hover:bg-orange-500 hover:text-white transition">
+                Menu
+            </button>
+            <div id="dropdown" class="dropdown-content absolute left-0 mt-2 w-48 bg-gray-900 rounded-md shadow-lg">
+                <a href="affiliate1.html" class="block px-4 py-2 text-orange-400 hover:bg-gray-700">Affiliate 1</a>
+                <a href="affiliate2.html" class="block px-4 py-2 text-orange-400 hover:bg-gray-700">Affiliate 2</a>
+                <a href="affiliate3.html" class="block px-4 py-2 text-orange-400 hover:bg-gray-700">Affiliate 3</a>
+                <a href="affiliate4.html" class="block px-4 py-2 text-orange-400 hover:bg-gray-700">Affiliate 4</a>
+                <a href="#" onclick="toggleAbout()" class="block px-4 py-2 text-orange-400 hover:bg-gray-700">About Us</a>
             </div>
         </div>
     </nav>
-    <div class="deals" id="affiliate1">
-        <div class="deal">
-            <img src="https://via.placeholder.com/300" alt="Gaming Laptop">
-            <h3>Razer Gaming Laptop</h3>
-            <p>High-performance gaming laptop for pro gamers.</p>
-            <a href="#" target="_blank">Check Deal</a>
+
+    <!-- Deals Section -->
+    <section class="flex flex-wrap justify-center gap-6 p-8">
+        <div class="deal bg-gray-900 p-5 rounded-lg w-80 shadow-lg hover:shadow-orange-500 transition transform hover:scale-105">
+            <img src="https://via.placeholder.com/300" alt="Gaming Laptop" class="w-full rounded-md lazyload">
+            <h3 class="text-orange-500 text-lg font-bold mt-3">Razer Gaming Laptop</h3>
+            <p class="text-gray-400 text-sm">High-performance gaming laptop for pro gamers.</p>
+            <a href="#" target="_blank" class="block bg-orange-500 text-white text-center py-2 rounded-md mt-3 hover:bg-orange-600 transition">
+                Check Deal
+            </a>
         </div>
-    </div>
-    <div class="about" id="about">
-        <h2>About Us</h2>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="hidden bg-gray-800 text-white p-6 rounded-lg mx-6 shadow-lg max-w-3xl mx-auto">
+        <h2 class="text-orange-500 text-xl font-bold mb-3">About Us</h2>
         <p>Welcome to Gaming Deals Hub, your number one source for the best gaming deals. We're dedicated to giving you the very best gaming products, with a focus on quality, affordability, and customer service.</p>
-        <p>Founded in 2025 by Nano, Gaming Deals Hub has come a long way from its beginnings. When Nano first started out, their passion for providing the best gaming deals drove them to do tons of research so that Gaming Deals Hub can offer you the most competitive prices. We now serve customers all over the world and are thrilled that we're able to turn our passion into our own website.</p>
-        <p>We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.</p>
-        <p>Sincerely,<br>Nano</p>
-    </div>
-    <footer>
-        <p class="attribution">
-            <a href="http://www.freepik.com" target="_blank">Designed by pikisuperstar / Freepik</a>
+        <p>Founded in 2025 by Nano, Gaming Deals Hub has come a long way from its beginnings. When Nano first started out, their passion for providing the best gaming deals drove them to do tons of research so that Gaming Deals Hub can offer you the most competitive prices.</p>
+        <p>We now serve customers worldwide and are thrilled to turn our passion into a useful website.</p>
+        <p><strong>Sincerely,</strong><br>Nano</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="fixed bottom-5 w-full text-center text-xs text-gray-400">
+        <p>
+            <a href="http://www.freepik.com" target="_blank" class="hover:underline">Designed by pikisuperstar / Freepik</a>
         </p>
     </footer>
-    <script>
-        function toggleMenu() {
-            var dropdownContent = document.getElementById("dropdown-content");
-            if (dropdownContent.classList.contains("show")) {
-                dropdownContent.classList.remove("show");
-            } else {
-                dropdownContent.classList.add("show");
-            }
-        }
 
-        function toggleAbout() {
-            var aboutSection = document.getElementById('about');
-            if (aboutSection.style.display === 'none' || aboutSection.style.display === '') {
-                aboutSection.style.display = 'block';
-            } else {
-                aboutSection.style.display = 'none';
-            }
-        }
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Toggle Dropdown Menu
+            const menuButton = document.getElementById("menuButton");
+            const dropdown = document.getElementById("dropdown");
+
+            menuButton.addEventListener("click", function (event) {
+                event.stopPropagation();
+                dropdown.classList.toggle("show");
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener("click", function (event) {
+                if (!menuButton.contains(event.target) && !dropdown.contains(event.target)) {
+                    dropdown.classList.remove("show");
+                }
+            });
+
+            // Toggle About Section
+            window.toggleAbout = function () {
+                const aboutSection = document.getElementById('about');
+                aboutSection.classList.toggle('hidden');
+            };
+        });
     </script>
+
 </body>
 </html>

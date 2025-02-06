@@ -45,6 +45,31 @@
             background: #ff6600;
             color: #fff;
         }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #ff6600;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
         .deals {
             display: flex;
             flex-wrap: wrap;
@@ -145,11 +170,16 @@
 <body>
     <header>Gaming Deals Hub</header>
     <nav>
-        <a href="#affiliate1">Affiliate 1</a>
-        <a href="#affiliate2">Affiliate 2</a>
-        <a href="#affiliate3">Affiliate 3</a>
-        <a href="#affiliate4">Affiliate 4</a>
-        <button class="about-button" onclick="toggleAbout()">About Us</button>
+        <div class="dropdown">
+            <button class="about-button">Menu</button>
+            <div class="dropdown-content">
+                <a href="#affiliate1">Affiliate 1</a>
+                <a href="#affiliate2">Affiliate 2</a>
+                <a href="#affiliate3">Affiliate 3</a>
+                <a href="#affiliate4">Affiliate 4</a>
+                <a href="#" onclick="toggleAbout()">About Us</a>
+            </div>
+        </div>
     </nav>
     <div class="deals" id="affiliate1">
         <div class="deal">

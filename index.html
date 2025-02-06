@@ -27,23 +27,9 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
         }
         nav {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        nav a {
-            color: #ff6600;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        nav a:hover {
-            background: #ff6600;
-            color: #fff;
+            position: absolute;
+            top: 10px;
+            left: 10px;
         }
         .dropdown {
             position: relative;
@@ -52,6 +38,8 @@
         .dropdown-content {
             display: none;
             position: absolute;
+            left: 0;
+            top: 40px;
             background-color: #333;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -67,7 +55,7 @@
         .dropdown-content a:hover {
             background-color: #575757;
         }
-        .dropdown:hover .dropdown-content {
+        .show {
             display: block;
         }
         .deals {
@@ -171,12 +159,12 @@
     <header>Gaming Deals Hub</header>
     <nav>
         <div class="dropdown">
-            <button class="about-button">Menu</button>
-            <div class="dropdown-content">
-                <a href="#affiliate1">Affiliate 1</a>
-                <a href="#affiliate2">Affiliate 2</a>
-                <a href="#affiliate3">Affiliate 3</a>
-                <a href="#affiliate4">Affiliate 4</a>
+            <button class="about-button" onclick="toggleMenu()">Menu</button>
+            <div id="dropdown-content" class="dropdown-content">
+                <a href="affiliate1.html">Affiliate 1</a>
+                <a href="affiliate2.html">Affiliate 2</a>
+                <a href="affiliate3.html">Affiliate 3</a>
+                <a href="affiliate4.html">Affiliate 4</a>
                 <a href="#" onclick="toggleAbout()">About Us</a>
             </div>
         </div>
@@ -188,21 +176,6 @@
             <p>High-performance gaming laptop for pro gamers.</p>
             <a href="#" target="_blank">Check Deal</a>
         </div>
-        <div class="deal">
-            <img src="https://via.placeholder.com/300" alt="Gaming Mouse">
-            <h3>Logitech G Pro Mouse</h3>
-            <p>Ultra-light gaming mouse for precision and speed.</p>
-            <a href="#" target="_blank">Check Deal</a>
-        </div>
-    </div>
-    <div class="deals" id="affiliate2">
-        <!-- More deals can be added here -->
-    </div>
-    <div class="deals" id="affiliate3">
-        <!-- More deals can be added here -->
-    </div>
-    <div class="deals" id="affiliate4">
-        <!-- More deals can be added here -->
     </div>
     <div class="about" id="about">
         <h2>About Us</h2>
@@ -217,6 +190,15 @@
         </p>
     </footer>
     <script>
+        function toggleMenu() {
+            var dropdownContent = document.getElementById("dropdown-content");
+            if (dropdownContent.classList.contains("show")) {
+                dropdownContent.classList.remove("show");
+            } else {
+                dropdownContent.classList.add("show");
+            }
+        }
+
         function toggleAbout() {
             var aboutSection = document.getElementById('about');
             if (aboutSection.style.display === 'none' || aboutSection.style.display === '') {

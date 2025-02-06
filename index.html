@@ -7,12 +7,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: url('background.webp') no-repeat center center fixed;
-            background-size: cover;
+            background: linear-gradient(180deg, #000000, #111111, #222222);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s infinite linear;
             color: #fff;
             text-align: center;
             margin: 0;
             padding: 0;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
         }
         header {
             background: linear-gradient(90deg, #222, #111);

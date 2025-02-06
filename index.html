@@ -95,13 +95,31 @@
         }
         /* New section styles */
         .about {
-            padding: 40px;
+            padding: 20px;
             background: #111;
             color: #fff;
             text-align: left;
+            display: none;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
         }
         .about h2 {
             color: #ff6600;
+        }
+        .about-button {
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.8);
+            color: #ff6600;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .about-button:hover {
+            background: #ff6600;
+            color: #fff;
         }
         /* Footer styles */
         footer {
@@ -131,7 +149,7 @@
         <a href="#affiliate2">Affiliate 2</a>
         <a href="#affiliate3">Affiliate 3</a>
         <a href="#affiliate4">Affiliate 4</a>
-        <a href="#about">About Us</a>
+        <button class="about-button" onclick="toggleAbout()">About Us</button>
     </nav>
     <div class="deals" id="affiliate1">
         <div class="deal">
@@ -169,7 +187,14 @@
         </p>
     </footer>
     <script>
-        // Add any JavaScript here if needed
+        function toggleAbout() {
+            var aboutSection = document.getElementById('about');
+            if (aboutSection.style.display === 'none' || aboutSection.style.display === '') {
+                aboutSection.style.display = 'block';
+            } else {
+                aboutSection.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>

@@ -1,112 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name='impact-site-verification' value='f4d946f9-857e-4f18-bfed-b1801099bc33'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Find the best gaming deals on laptops, mice, and accessories.">
     <meta name="keywords" content="gaming deals, gaming laptops, gaming accessories, best gaming deals">
     <title>Gaming Deals Hub</title>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <!-- Keeping the existing styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css">
     <style>
         body {
-            background: url('background.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
         }
-        .deal img {
-            transition: opacity 0.3s ease-in-out;
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
         }
-        .deal:hover img {
-            opacity: 0.8;
+        .nav {
+            background-color: #1e1e1e;
+            padding: 15px;
+            text-align: center;
         }
-        .dropdown-content {
-            display: none;
+        .nav a {
+            color: orange;
+            margin: 0 10px;
+            text-decoration: none;
         }
-        .show {
-            display: block !important;
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1e1e1e;
         }
     </style>
 </head>
-<body class="text-white font-sans">
+<body>
 
-    <!-- Header -->
-    <header class="bg-gray-900 text-center py-5 shadow-lg text-xl font-bold uppercase tracking-widest">
-        Gaming Deals Hub
+    <header class="nav">
+        <h1>Gaming Deals Hub</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/laptops.html">Gaming Laptops</a>
+            <a href="/accessories.html">Accessories</a>
+            <a href="/about.html">About</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
     </header>
 
-    <!-- Navigation -->
-    <nav class="absolute top-5 left-5">
-        <div class="relative">
-            <button id="menuButton" class="bg-gray-800 text-orange-500 px-4 py-2 rounded-md hover:bg-orange-500 hover:text-white transition">
-                Menu
-            </button>
-            <div id="dropdown" class="dropdown-content absolute left-0 mt-2 w-48 bg-gray-900 rounded-md shadow-lg">
-                <a href="affiliate1.html" class="block px-4 py-2 text-orange-400 hover:bg-gray-700">Affiliate 1</a>
-                <a href="affiliate2.html" class="block px-4 py-2 text-orange-400 hover:bg-gray-700">Affiliate 2</a>
-                <a href="affiliate3.html" class="block px-4 py-2 text-orange-400 hover:bg-gray-700">Affiliate 3</a>
-                <a href="affiliate4.html" class="block px-4 py-2 text-orange-400 hover:bg-gray-700">Affiliate 4</a>
-                <a href="#" onclick="toggleAbout()" class="block px-4 py-2 text-orange-400 hover:bg-gray-700">About Us</a>
-            </div>
-        </div>
-    </nav>
+    <div class="container">
+        <h2>Welcome to Gaming Deals Hub</h2>
+        <p>Find the best deals on gaming laptops, accessories, and more.</p>
+    </div>
 
-    <!-- Deals Section -->
-    <section class="flex flex-wrap justify-center gap-6 p-8">
-        <div class="deal bg-gray-900 p-5 rounded-lg w-80 shadow-lg hover:shadow-orange-500 transition transform hover:scale-105">
-            <img src="https://via.placeholder.com/300" alt="Gaming Laptop" class="w-full rounded-md lazyload">
-            <h3 class="text-orange-500 text-lg font-bold mt-3">Razer Gaming Laptop</h3>
-            <p class="text-gray-400 text-sm">High-performance gaming laptop for pro gamers.</p>
-            <a href="#" target="_blank" class="block bg-orange-500 text-white text-center py-2 rounded-md mt-3 hover:bg-orange-600 transition">
-                Check Deal
-            </a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="hidden bg-gray-800 text-white p-6 rounded-lg mx-6 shadow-lg max-w-3xl mx-auto">
-        <h2 class="text-orange-500 text-xl font-bold mb-3">About Us</h2>
-        <p>Welcome to Gaming Deals Hub, your number one source for the best gaming deals. We're dedicated to giving you the very best gaming products, with a focus on quality, affordability, and customer service.</p>
-        <p>Founded in 2025 by Nano, Gaming Deals Hub has come a long way from its beginnings. When Nano first started out, their passion for providing the best gaming deals drove them to do tons of research so that Gaming Deals Hub can offer you the most competitive prices.</p>
-        <p>We now serve customers worldwide and are thrilled to turn our passion into a useful website.</p>
-        <p><strong>Sincerely,</strong><br>Nano</p>
-    </section>
-
-    <!-- Footer -->
-    <footer class="fixed bottom-5 w-full text-center text-xs text-gray-400">
-        <p>
-            <a href="http://www.freepik.com" target="_blank" class="hover:underline">Designed by pikisuperstar / Freepik</a>
-        </p>
+    <footer class="footer">
+        <p>&copy; 2025 Gaming Deals Hub. All rights reserved.</p>
     </footer>
-
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Toggle Dropdown Menu
-            const menuButton = document.getElementById("menuButton");
-            const dropdown = document.getElementById("dropdown");
-
-            menuButton.addEventListener("click", function (event) {
-                event.stopPropagation();
-                dropdown.classList.toggle("show");
-            });
-
-            // Close dropdown when clicking outside
-            document.addEventListener("click", function (event) {
-                if (!menuButton.contains(event.target) && !dropdown.contains(event.target)) {
-                    dropdown.classList.remove("show");
-                }
-            });
-
-            // Toggle About Section
-            window.toggleAbout = function () {
-                const aboutSection = document.getElementById('about');
-                aboutSection.classList.toggle('hidden');
-            };
-        });
-    </script>
 
 </body>
 </html>

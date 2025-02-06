@@ -10,19 +10,13 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #000000, #111111, #222222);
-            background-size: 400% 400%;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
             animation: gradientAnimation 10s infinite linear;
             color: #fff;
             text-align: center;
             margin: 0;
             padding: 0;
-        }
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
         header {
             background: linear-gradient(90deg, #222, #111);
             padding: 20px;
@@ -99,6 +93,31 @@
         .deal a:hover {
             background: linear-gradient(90deg, #ff3300, #ff6600);
         }
+        /* New section styles */
+        .about {
+            padding: 40px;
+            background: #111;
+            color: #fff;
+            text-align: left;
+        }
+        .about h2 {
+            color: #ff6600;
+        }
+        /* Footer styles */
+        footer {
+            background: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .attribution a {
+            color: #ff6600;
+            text-decoration: none;
+        }
+        .attribution a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -108,6 +127,7 @@
         <a href="#affiliate2">Affiliate 2</a>
         <a href="#affiliate3">Affiliate 3</a>
         <a href="#affiliate4">Affiliate 4</a>
+        <a href="#about">About Us</a>
     </nav>
     <div class="deals" id="affiliate1">
         <div class="deal">
@@ -132,6 +152,18 @@
     <div class="deals" id="affiliate4">
         <!-- More deals can be added here -->
     </div>
+    <div class="about" id="about">
+        <h2>About Us</h2>
+        <p>Welcome to Gaming Deals Hub, your number one source for the best gaming deals. We're dedicated to giving you the very best gaming products, with a focus on quality, affordability, and customer service.</p>
+        <p>Founded in 2025 by Nano, Gaming Deals Hub has come a long way from its beginnings. When [Your Name] first started out, their passion for providing the best gaming deals drove them to do tons of research so that Gaming Deals Hub can offer you the most competitive prices. We now serve customers all over the world and are thrilled that we're able to turn our passion into our own website.</p>
+        <p>We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.</p>
+        <p>Sincerely,<br>Nano</p>
+    </div>
+    <footer>
+        <p class="attribution">
+            <a href="http://www.freepik.com" target="_blank">Designed by pikisuperstar / Freepik</a>
+        </p>
+    </footer>
     <script>
         // Add any JavaScript here if needed
     </script>

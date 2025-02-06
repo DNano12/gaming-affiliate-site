@@ -14,6 +14,47 @@
             margin: 0;
             padding: 0;
         }
+        header {
+            background: linear-gradient(90deg, #222, #111);
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 40px;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #ff6600;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+        .show {
+            display: block;
+        }
         .deal {
             background: rgba(34, 34, 34, 0.9);
             padding: 20px;
@@ -56,14 +97,27 @@
         .deal a:hover {
             background: linear-gradient(90deg, #ff3300, #ff6600);
         }
-    </style>
-</head>
-<body>
-    <div class="deal">
-        <img src="https://via.placeholder.com/300" alt="Gaming Mouse">
-        <h3>Logitech G Pro Mouse</h3>
-        <p>Ultra-light gaming mouse for precision and speed.</p>
-        <a href="#" target="_blank">Check Deal</a>
-    </div>
-</body>
-</html>
+        .about {
+            padding: 20px;
+            background: #111;
+            color: #fff;
+            text-align: left;
+            display: none;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .about h2 {
+            color: #ff6600;
+        }
+        footer {
+            position: fixed;
+            bottom: 5px;
+            width: 100%;
+            text-align: center;
+        }
+        .attribution {
+            font-size: 10px;
+            opacity: 0.4;
+            color: #ffffff;
+        }
+        .attribution
